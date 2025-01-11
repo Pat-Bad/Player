@@ -3,6 +3,15 @@
 public class Main {
     public static void main(String[] args) {
 
+        RegistrazioneAudio registrazione = new RegistrazioneAudio("prova", 5);
+        System.out.println(registrazione);
+        
+        //registrazione.volumeUp();
+        //registrazione.volumeDown();
+        int volume;
+        registrazione.play(3);
+
+
     }
 
 }
