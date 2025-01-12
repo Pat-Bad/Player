@@ -13,20 +13,20 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play, Vo
 
     @Override
     public void volumeUp() {
-        System.out.println("Inserisci un valore da 2 a 5 per aumentare il volume e premi invio");
+        System.out.println("Inserisci un valore per aumentare il volume e premi invio");
         Scanner scannerUp = new Scanner(System.in);
         int volume = scannerUp.nextInt();
         System.out.println("Volume impostato a " + volume);
-        scannerUp.close();
+
     }
 
     @Override
     public void volumeDown() {
-        System.out.println("Inserisci un valore da 1 a 4 per diminuire il volume e premi invio");
+        System.out.println("Inserisci un valore per abbassare il volume e premi invio");
         Scanner scannerDown = new Scanner(System.in);
         int volume = scannerDown.nextInt();
         System.out.println("Volume impostato a " + volume);
-        scannerDown.close();
+
     }
 
     @Override
@@ -34,11 +34,16 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play, Vo
         System.out.println("Inserisci il volume");
         Scanner volume = new Scanner (System.in);
         int vol = volume.nextInt();
-        volume.close();
+
         for (int i=0;i<durata;i++) {System.out.print(title);
         for (int j=0; j<vol; j++)
             System.out.print("!");
 
         System.out.println();}
+        volumeUp();
+        volumeDown();
+
+
+
     }
 }
