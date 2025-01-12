@@ -2,14 +2,11 @@ import java.util.Scanner;
 
 public class RegistrazioneAudio extends ElementoMultimediale implements Play, Volume{
     private int volume;
+    private int durata;
 
-    public RegistrazioneAudio(String title) {
+    public RegistrazioneAudio(String title, int durata) {
         super(title);
-    }
-
-    public RegistrazioneAudio(String title, int volume) {
-        super(title);
-        this.volume = volume;
+        this.durata = durata;
     }
 
     @Override
@@ -32,9 +29,16 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play, Vo
     }
 
     @Override
-    public void play(int volume) {
-        for (int i=0; i<volume; i++)
-            System.out.println("!");
+    public void play() {
+        System.out.println("Inserisci il volume");
+        Scanner volume = new Scanner (System.in);
+        int vol = volume.nextInt();
+        volume.close();
+        for (int i=0;i<durata;i++) {System.out.print(title);
+        for (int j=0; j<vol; j++)
+            System.out.print("!");
+
+        System.out.println();}
 
     }
 }

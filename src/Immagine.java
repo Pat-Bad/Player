@@ -2,10 +2,12 @@ import java.util.Scanner;
 
 public class Immagine extends ElementoMultimediale implements Brightness {
     private int brightness;
+    private int durata;
 
-    public Immagine (String title) {
+    public Immagine (String title, int durata) {
         super(title);
-        this.brightness = brightness;
+        this.durata = durata;
+
     }
 
 
@@ -29,9 +31,16 @@ public class Immagine extends ElementoMultimediale implements Brightness {
     }
 
 
-    public void show(int brightness) {
-        for (int i=0; i<brightness; i++)
-            System.out.println("*");
+    public void show() {
+        System.out.println("Inserisci il livello di luminosità");
+        Scanner luminosita = new Scanner (System.in);
+        int lum = luminosita.nextInt();
+        for (int d=0;d<durata;d++) {System.out.print(title);
+            for (int i = 0; i < lum; i++)
+                System.out.print(" *");
+            System.out.println();
+
+        }
 
 
 

@@ -1,13 +1,31 @@
 import java.util.Scanner;
 
 public class RegistrazioneVideo extends ElementoMultimediale implements Volume, Brightness{
+    private int durata;
     private int volume;
     private int brightness;
 
-    public RegistrazioneVideo (String title) {
+    public RegistrazioneVideo (String title, int durata) {
         super(title);
-        this.volume = volume;
-        this.brightness = brightness;
+        this.durata = durata;
+    }
+
+    public void play() {
+        System.out.println("Inserisci il volume");
+        Scanner volume = new Scanner (System.in);
+        int vol = volume.nextInt();
+
+        System.out.println("\n Inserisci il livello di luminosità");
+        Scanner luminosita = new Scanner(System.in);
+        int brightness = luminosita.nextInt();
+
+        for (int i = 0; i<durata; i++) {System.out.print(title);
+            for (int j=0; j<vol; j++)
+                System.out.print(" !");
+        for (int k=0;k<brightness;k++)
+            System.out.print(" *");
+            System.out.println();}
+
     }
 
     @Override
@@ -31,13 +49,7 @@ public class RegistrazioneVideo extends ElementoMultimediale implements Volume, 
 
     }
 
-    public void play(int volume, int brightness) {
-        for (int i=0; i<volume; i++)
-            System.out.println("!");
 
-        for (int i=0; i<brightness; i++)
-            System.out.println("*");
-    }
 
     @Override
     public void volumeUp() {
@@ -57,4 +69,5 @@ public class RegistrazioneVideo extends ElementoMultimediale implements Volume, 
         scannerDown.close();
 
     }
+
 }
