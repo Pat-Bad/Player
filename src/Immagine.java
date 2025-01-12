@@ -4,10 +4,10 @@ import Interfaces.Show;
 import java.util.Scanner;
 
 public class Immagine extends ElementoMultimediale implements Brightness, Show {
-    private int brightness;
+    private final int brightness;
     private int durata;
 
-    public Immagine (String title, int brightness) {
+    public Immagine(String title, int brightness) {
         super(title);
         this.brightness = brightness;
 
@@ -24,8 +24,8 @@ public class Immagine extends ElementoMultimediale implements Brightness, Show {
 
     @Override
     public void brightnessDown() {
-        System.out.println("Inserisci un valore e premi invio");
-        Scanner scanner2 = new Scanner (System.in);
+        System.out.println("Inserisci un valore per diminuire la luminosità e premi invio");
+        Scanner scanner2 = new Scanner(System.in);
         int brightness = scanner2.nextInt();
         System.out.println("Luminosità impostata a " + brightness);
 
@@ -34,15 +34,16 @@ public class Immagine extends ElementoMultimediale implements Brightness, Show {
     @Override
     public void show() {
 
-        for (int d=0;d<brightness;d++) {System.out.print(title);
+        for (int d = 0; d < brightness; d++) {
+            System.out.print(title);
             for (int i = 0; i < brightness; i++)
                 System.out.print(" *");
             System.out.println();
-            brightnessUp();
-            brightnessDown();
+
 
         }
-
+        brightnessUp();
+        brightnessDown();
 
     }
 }

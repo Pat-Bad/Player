@@ -2,9 +2,9 @@ import Interfaces.Play;
 
 import java.util.Scanner;
 
-public class RegistrazioneAudio extends ElementoMultimediale implements Play, Volume{
+public class RegistrazioneAudio extends ElementoMultimediale implements Play, Volume {
 
-    private int durata;
+    private final int durata;
 
     public RegistrazioneAudio(String title, int durata) {
         super(title);
@@ -32,18 +32,17 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play, Vo
     @Override
     public void play() {
         System.out.println("Inserisci il volume");
-        Scanner volume = new Scanner (System.in);
+        Scanner volume = new Scanner(System.in);
         int vol = volume.nextInt();
 
-        for (int i=0;i<durata;i++) {System.out.print(title);
-        for (int j=0; j<vol; j++)
-            System.out.print("!");
+        for (int i = 0; i < durata; i++) {
+            System.out.print(title);
+            for (int j = 0; j < vol; j++)
+                System.out.print("!");
 
-        System.out.println();}
+            System.out.println();
+        }
         volumeUp();
         volumeDown();
-
-
-
     }
 }

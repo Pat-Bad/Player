@@ -17,7 +17,6 @@ public class RegistrazioneVideo extends ElementoMultimediale implements Volume, 
         Scanner scannerUp = new Scanner(System.in);
         int volume = scannerUp.nextInt();
         System.out.println("Volume impostato a " + volume);
-
     }
 
     @Override
@@ -62,16 +61,11 @@ public class RegistrazioneVideo extends ElementoMultimediale implements Volume, 
             for (int k = 0; k < brightness; k++)
                 System.out.print(" *");
             System.out.println();
-            volumeUp();
-            volumeDown();
-            brightnessUp();
-            brightnessDown();
+
         }
+        volumeUp();
+        volumeDown();
+        brightnessUp();
+        brightnessDown();
     }
-
-
-
-
-
-
 }

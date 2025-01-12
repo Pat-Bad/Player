@@ -18,5 +18,4 @@ public abstract class ElementoMultimediale {
     public String toString(){
         return "Titolo dell'elemento: " + title;
     }
-
 }
