@@ -16,8 +16,6 @@ public class Main {
         Immagine immagineProva = new Immagine("immagine di prova", 2);
         immagineProva.show();
 
-
-
     }
 
 }

@@ -1,7 +1,9 @@
+import Interfaces.Play;
+
 import java.util.Scanner;
 
 public class RegistrazioneAudio extends ElementoMultimediale implements Play, Volume{
-    private int volume;
+
     private int durata;
 
     public RegistrazioneAudio(String title, int durata) {
@@ -25,7 +27,6 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play, Vo
         int volume = scannerDown.nextInt();
         System.out.println("Volume impostato a " + volume);
         scannerDown.close();
-
     }
 
     @Override
@@ -39,6 +40,5 @@ public class RegistrazioneAudio extends ElementoMultimediale implements Play, Vo
             System.out.print("!");
 
         System.out.println();}
-
     }
 }
